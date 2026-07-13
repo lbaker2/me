@@ -1,0 +1,24 @@
+{
+  "name": "lbaker-dev",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Living resume and personal portfolio for Lawrence Baker (lbaker.dev).",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "astro": "^7.0.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.2",
+    "prettier": "^3.9.4",
+    "prettier-plugin-astro": "^0.14.1",
+    "tailwindcss": "^4.3.2"
+  }
+}

@@ -1,0 +1,20 @@
+---
+interface Props {
+  /** Anchor id used for in-page navigation. */
+  id: string;
+  /** Visible section heading. */
+  title: string;
+}
+
+const { id, title } = Astro.props;
+---
+
+<section id={id} class="scroll-mt-20 py-12 sm:py-16" aria-labelledby={`${id}-heading`}>
+  <h2
+    id={`${id}-heading`}
+    class="mb-8 text-sm font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400"
+  >
+    {title}
+  </h2>
+  <slot />
+</section>
