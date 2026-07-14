@@ -107,6 +107,30 @@ export interface ContactLink {
   display?: string;
 }
 
+/**
+ * A single headline number, surfaced as a "by the numbers" stat near the top of
+ * the page. This is the fastest way for a hiring manager to gauge the *scale* of
+ * the experience without reading every role.
+ */
+export interface ImpactStat {
+  /** The figure itself, kept short, e.g. "500K+". */
+  value: string;
+  /** What the figure refers to, e.g. "users on a mobile app rebuilt in 3 months". */
+  label: string;
+}
+
+/**
+ * A working principle — the "intangibles" half of the resume. These describe how
+ * someone works and what they value, which is often what a team is really trying
+ * to assess for fit. Each one is grounded in the experience below, not aspiration.
+ */
+export interface Principle {
+  /** Short, memorable heading. */
+  title: string;
+  /** A sentence or two, in plain first-person prose. */
+  description: string;
+}
+
 /** Top-level profile / hero information. */
 export interface Profile {
   name: string;
@@ -116,6 +140,8 @@ export interface Profile {
   tagline: string;
   /** A short paragraph introducing yourself. */
   about: string;
+  /** A sentence on the kind of team and problems that are a good fit. */
+  lookingFor: string;
   /** A one-line note on what you're open to, shown near the top. */
   availability: string;
   /** Location for display. */
@@ -125,6 +151,10 @@ export interface Profile {
 /** The complete, typed resume. */
 export interface Resume {
   profile: Profile;
+  /** Headline numbers, shown as a compact "by the numbers" strip. */
+  impact: ImpactStat[];
+  /** How I work — the intangibles a team is usually trying to read. */
+  principles: Principle[];
   experience: Experience[];
   projects: Project[];
   openSource: OpenSourceProject[];
@@ -145,9 +175,71 @@ export const resume: Resume = {
       'apps, APIs, and web platforms, mostly in youth sports, and more recently the agentic AI ' +
       'systems behind them. I enjoy sharing what I am reading and learning with the people I ' +
       'work with, and I care about leaving a codebase clearer than I found it.',
+    lookingFor:
+      'I do my best work on backend-heavy teams solving real operational problems — payments, ' +
+      'scale, reliability, and the agentic AI now built on top of them — where engineering craft ' +
+      'and mentoring both count.',
     availability: 'Open to senior and staff engineering roles.',
     location: 'Hanover, PA',
   },
+
+  impact: [
+    {
+      value: '10+ yrs',
+      label: 'shipping production backends, mobile apps, and web platforms',
+    },
+    {
+      value: '500K+',
+      label: 'users on a mobile app rebuilt in three months',
+    },
+    {
+      value: 'Millions',
+      label: 'of public-schedule pageviews a day at peak',
+    },
+    {
+      value: '5M+',
+      label: 'registrations processed a year, PCI-compliant',
+    },
+  ],
+
+  principles: [
+    {
+      title: 'Right over flashy',
+      description:
+        'I reach for the solution that fits the problem, not the one with the best press. ' +
+        'Boring and reliable usually wins.',
+    },
+    {
+      title: 'Leave it clearer than I found it',
+      description:
+        'Every change is a chance to make the next person’s job easier. Readable code and clean ' +
+        'seams are part of the work, not a nice-to-have.',
+    },
+    {
+      title: 'Understand before automating',
+      description:
+        'I learn how a team actually works before trying to speed it up — especially now that ' +
+        'agents are doing more of the building.',
+    },
+    {
+      title: 'Ship in small pieces',
+      description:
+        'Incremental delivery over big-bang launches. Shorter feedback loops catch problems ' +
+        'while they are still cheap to fix.',
+    },
+    {
+      title: 'Raise the team, not just the code',
+      description:
+        'Mentoring, shared playbooks, and fast onboarding compound. I would rather set ' +
+        'conventions others build on than be the only one who can.',
+    },
+    {
+      title: 'Share what I learn',
+      description:
+        'I read widely and pass it on. A team that learns together moves faster than any single ' +
+        'engineer can alone.',
+    },
+  ],
 
   experience: [
     {
