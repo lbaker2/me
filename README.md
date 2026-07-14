@@ -1,6 +1,6 @@
 # lbaker.dev
 
-A personal portfolio and "living resume" for **Lawrence Baker**, Senior Software Engineer.
+A personal portfolio and "living resume" for **Lawrence Baker**, Staff Backend Software Engineer.
 
 Built as a fast, accessible, single-page site. Content is stored as typed,
 structured data — separate from presentation — so the resume is easy to keep

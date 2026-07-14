@@ -137,7 +137,7 @@ export interface Resume {
 export const resume: Resume = {
   profile: {
     name: 'Lawrence Baker',
-    title: 'Staff Software Engineer',
+    title: 'Staff Backend Software Engineer',
     tagline: 'Backend and full-stack engineer. I build reliable systems and share what I learn.',
     about:
       "I'm a software engineer who likes working across a range of technologies to find the " +
@@ -152,7 +152,7 @@ export const resume: Resume = {
   experience: [
     {
       company: 'OTTO Sport AI',
-      role: 'Staff Backend Engineer',
+      role: 'Staff Backend Software Engineer',
       startDate: 'Jan 2026',
       endDate: 'Present',
       location: 'Remote',
@@ -404,11 +404,24 @@ export const resume: Resume = {
   ],
 
   certifications: [
-    { name: 'Building with the Claude API', issuer: 'Anthropic', year: '2026' },
-    { name: 'Claude Code in Action', issuer: 'Anthropic' },
-    { name: 'Docker and Kubernetes', issuer: 'Udemy', year: '2020' },
-    { name: 'Scala First Look', issuer: 'LinkedIn Learning', year: '2018' },
-    { name: 'Learning Go', issuer: 'LinkedIn Learning', year: '2018' },
+    {
+      name: 'Claude Code in Action',
+      issuer: 'Anthropic Education',
+      year: '2026',
+      href: 'https://verify.skilljar.com/c/a3q65w63utbz',
+    },
+    {
+      name: 'Building with the Claude API',
+      issuer: 'Anthropic Education',
+      year: '2026',
+      href: 'https://verify.skilljar.com/c/hhmpgnrtdf8s',
+    },
+    {
+      name: 'Docker and Kubernetes',
+      issuer: 'Udemy',
+      year: '2020',
+      href: 'https://www.udemy.com/certificate/UC-489ecede-550b-4461-a863-86b2106a20e0/',
+    },
   ],
 
   contact: [

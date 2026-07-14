@@ -8,17 +8,17 @@ const linkClass =
 <footer class="border-t border-slate-200 dark:border-slate-800">
   <div class="mx-auto max-w-3xl px-6 py-8 text-sm text-slate-500 dark:text-slate-400">
     <p>
-      &copy; {year} Lawrence Baker. Built with
+      &copy; {year} Lawrence Baker. Built with{' '}
       <a href="https://astro.build" class={linkClass} rel="noopener noreferrer" target="_blank"
         >Astro</a
-      >,
+      >,{' '}
       <a href="https://tailwindcss.com" class={linkClass} rel="noopener noreferrer" target="_blank"
         >Tailwind CSS</a
       >, and a good deal of AI pair-programming.
     </p>
     <p class="mt-1">
-      The <a href={sourceUrl} class={linkClass} rel="noopener noreferrer" target="_blank">source</a>
-      is on GitHub, and the resume lives in a single data file.
+      The <a href={sourceUrl} class={linkClass} rel="noopener noreferrer" target="_blank">source</a
+      >{' '}is on GitHub, and the resume lives in a single data file.
     </p>
   </div>
 </footer>
