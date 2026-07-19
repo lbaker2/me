@@ -173,8 +173,10 @@ export const resume: Resume = {
       "I'm a software engineer who likes working across a range of technologies to find the " +
       'right solution rather than the flashiest one. Over the past decade I have built mobile ' +
       'apps, APIs, and web platforms, mostly in youth sports, and more recently the agentic AI ' +
-      'systems behind them. I enjoy sharing what I am reading and learning with the people I ' +
-      'work with, and I care about leaving a codebase clearer than I found it.',
+      'systems behind them. After leading engineering as a director, I chose to step back onto ' +
+      'the IC track — I hired my own replacement and returned to building because I wanted to be ' +
+      'closer to the systems and the craft. I enjoy sharing what I am reading and learning with ' +
+      'the people I work with, and I care about leaving a codebase clearer than I found it.',
     lookingFor:
       'I do my best work on backend-heavy teams solving real operational problems — payments, ' +
       'scale, reliability, and the agentic AI now built on top of them — where engineering craft ' +
@@ -250,15 +252,31 @@ export const resume: Resume = {
       location: 'Remote',
       summary:
         'OTTO Sport AI grew out of Demosphere and is building an AI-driven operating system for ' +
-        'youth sports. I joined as a senior engineer and moved into a staff role, working on the ' +
-        'systems behind that shift.',
+        'youth sports. I joined as a senior engineer — a deliberate return to hands-on building — ' +
+        'and was promoted to staff, now leading technical architecture across three organizations ' +
+        'merging post-acquisition and operating at staff-to-principal scope on the decisions that ' +
+        'define how the combined platform behaves.',
       highlights: [
-        'Build client-facing and internal agentic systems that support youth sports operations.',
-        'Lead the move from a traditional development lifecycle (SDLC) to an AI-driven one (AIDLC), with spec-driven development (SDD) at its center so intent stays explicit and well-scoped work can be handed to agents.',
-        'Define the patterns other engineers build on as AI becomes a dependable part of delivery.',
-        'Work closely with cross-functional teams to understand how they actually work before automating any of it.',
+        'Lead technical architecture across three previously independent organizations merging post-acquisition, designing how the combined platform behaves as one coherent system rather than three bolted together.',
+        'Lead authentication federation of three separate identity providers onto a single Keycloak instance with a realm per organization as the tenancy boundary, including an in-flight migration off Rails Doorkeeper/Devise, so the merged platform operates as one system without breaking existing tenants.',
+        'Own the unification of a fragmented RBAC/ReBAC/ABAC authorization landscape onto a relationship-based model in OpenFGA, migrating access-driving entities into tuples via change-data-capture and strangling each access point from legacy lookups to OpenFGA incrementally.',
+        'Own key product and engineering direction for how the platform should behave, translating between what the business needs and what the architecture can support.',
+        'Drive the shift from a traditional development lifecycle (SDLC) to an AI-driven one (AIDLC), with spec-driven development (SDD) at its center so intent stays explicit and well-scoped work can be handed to agents.',
+        'Build client-facing and internal agentic systems that support youth sports operations, and define the patterns other engineers build on.',
       ],
-      tech: ['TypeScript', 'NestJS', 'React', 'Node.js', 'OpenAI', 'PostgreSQL', 'AWS'],
+      tech: [
+        'TypeScript',
+        'NestJS',
+        'React',
+        'Node.js',
+        'OpenAI',
+        'PostgreSQL',
+        'AWS',
+        'Keycloak',
+        'OpenFGA',
+        'OIDC',
+        'Multi-tenant architecture',
+      ],
     },
     {
       company: 'Demosphere',
@@ -370,6 +388,40 @@ export const resume: Resume = {
       tech: ['Claude Code', 'BMAD-Method', 'GitHub Spec Kit', 'AIDLC workflows', 'TypeScript'],
     },
     {
+      slug: 'cross-org-identity-and-authorization-consolidation',
+      title: 'Cross-org identity and authorization consolidation',
+      summary:
+        'Federating three post-acquisition identity providers onto one Keycloak instance and unifying a fragmented RBAC/ReBAC/ABAC landscape onto OpenFGA — work in flight.',
+      context: 'OTTO Sport AI · 2026',
+      problem:
+        'Post-acquisition, three previously independent organizations each brought their own ' +
+        'identity provider and their own inconsistent authorization implementation — a mix of ' +
+        'RBAC, ReBAC, and ABAC. The combined platform has to behave as one system without ' +
+        'breaking existing tenants.',
+      approach:
+        'On authentication, I mapped migration paths for all three identity providers onto a ' +
+        'single Keycloak instance using multiple realms, one realm per organization as the ' +
+        'tenancy boundary, with the first migration in progress off Rails Doorkeeper/Devise. On ' +
+        'authorization, I audited the codebases with AI tooling to map how permissions actually ' +
+        'work, chose OpenFGA as the unified relationship-based model, and am migrating by ' +
+        'change-data-capture of the access-driving entities into OpenFGA tuples — then strangling ' +
+        'each access point, swapping legacy access lookups for the OpenFGA implementation ' +
+        'incrementally.',
+      outcome:
+        'The work is in flight: the first identity-provider migration is live on Keycloak, and ' +
+        'the authorization cutover is proceeding access point by access point, so each swap ships ' +
+        'behind the behavior it replaces rather than as a big-bang migration.',
+      metrics: ['3 IdPs → 1 Keycloak', 'RBAC/ReBAC/ABAC → OpenFGA', 'Strangler-fig cutover'],
+      tech: [
+        'Keycloak',
+        'OpenFGA',
+        'OIDC',
+        'Change data capture',
+        'Ruby on Rails',
+        'Doorkeeper / Devise',
+      ],
+    },
+    {
       slug: 'embeddable-public-schedules',
       title: 'Embeddable public schedules',
       summary:
@@ -477,7 +529,30 @@ export const resume: Resume = {
     },
     {
       category: 'AI',
-      items: ['LLM integrations', 'Agentic systems', 'Prompt engineering', 'OpenAI'],
+      items: [
+        'LLM integrations',
+        'Agentic systems',
+        'Agentic development workflows',
+        'Spec-driven development',
+        'Prompt engineering',
+        'Claude Code',
+        'OpenAI',
+      ],
+    },
+    {
+      category: 'Identity & Access',
+      items: [
+        'Keycloak',
+        'OpenFGA',
+        'OIDC',
+        'RBAC',
+        'ReBAC',
+        'ABAC',
+        'Identity federation',
+        'Change data capture (CDC)',
+        'Strangler-fig migration',
+        'Multi-tenant architecture',
+      ],
     },
     {
       category: 'Leadership',
