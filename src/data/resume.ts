@@ -388,7 +388,7 @@ export const resume: Resume = {
       tech: ['Claude Code', 'BMAD-Method', 'GitHub Spec Kit', 'AIDLC workflows', 'TypeScript'],
     },
     {
-      slug: 'identity-and-authorization-consolidation',
+      slug: 'cross-org-identity-and-authorization-consolidation',
       title: 'Cross-org identity and authorization consolidation',
       summary:
         'Federating three post-acquisition identity providers onto one Keycloak instance and unifying a fragmented RBAC/ReBAC/ABAC landscape onto OpenFGA — work in flight.',
