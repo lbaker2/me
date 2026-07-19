@@ -173,8 +173,10 @@ export const resume: Resume = {
       "I'm a software engineer who likes working across a range of technologies to find the " +
       'right solution rather than the flashiest one. Over the past decade I have built mobile ' +
       'apps, APIs, and web platforms, mostly in youth sports, and more recently the agentic AI ' +
-      'systems behind them. I enjoy sharing what I am reading and learning with the people I ' +
-      'work with, and I care about leaving a codebase clearer than I found it.',
+      'systems behind them. After leading engineering as a director, I chose to step back onto ' +
+      'the IC track — I hired my own replacement and returned to building because I wanted to be ' +
+      'closer to the systems and the craft. I enjoy sharing what I am reading and learning with ' +
+      'the people I work with, and I care about leaving a codebase clearer than I found it.',
     lookingFor:
       'I do my best work on backend-heavy teams solving real operational problems — payments, ' +
       'scale, reliability, and the agentic AI now built on top of them — where engineering craft ' +
@@ -250,15 +252,28 @@ export const resume: Resume = {
       location: 'Remote',
       summary:
         'OTTO Sport AI grew out of Demosphere and is building an AI-driven operating system for ' +
-        'youth sports. I joined as a senior engineer and moved into a staff role, working on the ' +
-        'systems behind that shift.',
+        'youth sports. I joined as a senior engineer — a deliberate return to hands-on building — ' +
+        'and was promoted to staff, now leading technical architecture across three organizations ' +
+        'merging post-acquisition and operating at staff-to-principal scope on the decisions that ' +
+        'define how the combined platform behaves.',
       highlights: [
-        'Build client-facing and internal agentic systems that support youth sports operations.',
-        'Lead the move from a traditional development lifecycle (SDLC) to an AI-driven one (AIDLC), with spec-driven development (SDD) at its center so intent stays explicit and well-scoped work can be handed to agents.',
-        'Define the patterns other engineers build on as AI becomes a dependable part of delivery.',
-        'Work closely with cross-functional teams to understand how they actually work before automating any of it.',
+        'Lead technical architecture across three previously independent organizations merging post-acquisition, designing how the combined platform behaves as one coherent system rather than three bolted together.',
+        'Own the graceful consolidation of authentication, authorization, and data across those organizations — a unified identity and access model that lets the merged platform operate as one system without breaking existing tenants.',
+        'Own key product and engineering direction for how the platform should behave, translating between what the business needs and what the architecture can support.',
+        'Drive the shift from a traditional development lifecycle (SDLC) to an AI-driven one (AIDLC), with spec-driven development (SDD) at its center so intent stays explicit and well-scoped work can be handed to agents.',
+        'Build client-facing and internal agentic systems that support youth sports operations, and define the patterns other engineers build on.',
       ],
-      tech: ['TypeScript', 'NestJS', 'React', 'Node.js', 'OpenAI', 'PostgreSQL', 'AWS'],
+      tech: [
+        'TypeScript',
+        'NestJS',
+        'React',
+        'Node.js',
+        'OpenAI',
+        'PostgreSQL',
+        'AWS',
+        'OAuth / OIDC',
+        'Multi-tenant architecture',
+      ],
     },
     {
       company: 'Demosphere',
@@ -477,7 +492,25 @@ export const resume: Resume = {
     },
     {
       category: 'AI',
-      items: ['LLM integrations', 'Agentic systems', 'Prompt engineering', 'OpenAI'],
+      items: [
+        'LLM integrations',
+        'Agentic systems',
+        'Agentic development workflows',
+        'Spec-driven development',
+        'Prompt engineering',
+        'Claude Code',
+        'OpenAI',
+      ],
+    },
+    {
+      category: 'Identity & Integration',
+      items: [
+        'Authentication / Authorization',
+        'OAuth / OIDC',
+        'Multi-tenant architecture',
+        'Data migration & consolidation',
+        'Post-acquisition system integration',
+      ],
     },
     {
       category: 'Leadership',
