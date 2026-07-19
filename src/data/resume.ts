@@ -258,7 +258,8 @@ export const resume: Resume = {
         'define how the combined platform behaves.',
       highlights: [
         'Lead technical architecture across three previously independent organizations merging post-acquisition, designing how the combined platform behaves as one coherent system rather than three bolted together.',
-        'Own the graceful consolidation of authentication, authorization, and data across those organizations — a unified identity and access model that lets the merged platform operate as one system without breaking existing tenants.',
+        'Lead authentication federation of three separate identity providers onto a single Keycloak instance with a realm per organization as the tenancy boundary, including an in-flight migration off Rails Doorkeeper/Devise, so the merged platform operates as one system without breaking existing tenants.',
+        'Own the unification of a fragmented RBAC/ReBAC/ABAC authorization landscape onto a relationship-based model in OpenFGA, migrating access-driving entities into tuples via change-data-capture and strangling each access point from legacy lookups to OpenFGA incrementally.',
         'Own key product and engineering direction for how the platform should behave, translating between what the business needs and what the architecture can support.',
         'Drive the shift from a traditional development lifecycle (SDLC) to an AI-driven one (AIDLC), with spec-driven development (SDD) at its center so intent stays explicit and well-scoped work can be handed to agents.',
         'Build client-facing and internal agentic systems that support youth sports operations, and define the patterns other engineers build on.',
@@ -271,7 +272,9 @@ export const resume: Resume = {
         'OpenAI',
         'PostgreSQL',
         'AWS',
-        'OAuth / OIDC',
+        'Keycloak',
+        'OpenFGA',
+        'OIDC',
         'Multi-tenant architecture',
       ],
     },
@@ -383,6 +386,40 @@ export const resume: Resume = {
         'Spec-driven development becomes the normal way to work rather than a special case.',
       metrics: ['SDLC → AIDLC', 'Published org plugins', 'Pluggable frameworks'],
       tech: ['Claude Code', 'BMAD-Method', 'GitHub Spec Kit', 'AIDLC workflows', 'TypeScript'],
+    },
+    {
+      slug: 'identity-and-authorization-consolidation',
+      title: 'Cross-org identity and authorization consolidation',
+      summary:
+        'Federating three post-acquisition identity providers onto one Keycloak instance and unifying a fragmented RBAC/ReBAC/ABAC landscape onto OpenFGA — work in flight.',
+      context: 'OTTO Sport AI · 2026',
+      problem:
+        'Post-acquisition, three previously independent organizations each brought their own ' +
+        'identity provider and their own inconsistent authorization implementation — a mix of ' +
+        'RBAC, ReBAC, and ABAC. The combined platform has to behave as one system without ' +
+        'breaking existing tenants.',
+      approach:
+        'On authentication, I mapped migration paths for all three identity providers onto a ' +
+        'single Keycloak instance using multiple realms, one realm per organization as the ' +
+        'tenancy boundary, with the first migration in progress off Rails Doorkeeper/Devise. On ' +
+        'authorization, I audited the codebases with AI tooling to map how permissions actually ' +
+        'work, chose OpenFGA as the unified relationship-based model, and am migrating by ' +
+        'change-data-capture of the access-driving entities into OpenFGA tuples — then strangling ' +
+        'each access point, swapping legacy access lookups for the OpenFGA implementation ' +
+        'incrementally.',
+      outcome:
+        'The work is in flight: the first identity-provider migration is live on Keycloak, and ' +
+        'the authorization cutover is proceeding access point by access point, so each swap ships ' +
+        'behind the behavior it replaces rather than as a big-bang migration.',
+      metrics: ['3 IdPs → 1 Keycloak', 'RBAC/ReBAC/ABAC → OpenFGA', 'Strangler-fig cutover'],
+      tech: [
+        'Keycloak',
+        'OpenFGA',
+        'OIDC',
+        'Change data capture',
+        'Ruby on Rails',
+        'Doorkeeper / Devise',
+      ],
     },
     {
       slug: 'embeddable-public-schedules',
@@ -503,13 +540,18 @@ export const resume: Resume = {
       ],
     },
     {
-      category: 'Identity & Integration',
+      category: 'Identity & Access',
       items: [
-        'Authentication / Authorization',
-        'OAuth / OIDC',
+        'Keycloak',
+        'OpenFGA',
+        'OIDC',
+        'RBAC',
+        'ReBAC',
+        'ABAC',
+        'Identity federation',
+        'Change data capture (CDC)',
+        'Strangler-fig migration',
         'Multi-tenant architecture',
-        'Data migration & consolidation',
-        'Post-acquisition system integration',
       ],
     },
     {
